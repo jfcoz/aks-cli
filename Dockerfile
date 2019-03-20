@@ -4,5 +4,6 @@ RUN apk add --no-cache bash-completion \
 RUN which kubectl || az aks install-cli
 RUN test -f /usr/share/bash-completion/completions/kubectl || kubectl completion bash > /usr/share/bash-completion/completions/kubectl
 RUN which helm || curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | bash
+RUN test -f /usr/share/bash-completion/completions/helm || helm completion bash > /usr/share/bash-completion/completions/helm
 
 
